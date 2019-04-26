@@ -1,0 +1,280 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+  line-height: 1.618;
+  font-size: 1.7rem;
+  color: #2e3b41;
+  padding: 1rem;
+  background-color: #f5f8fa;
+}
+
+.container {
+  max-width: 1200px!important;
+  margin: 0 auto;
+}
+
+.text-container {
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+@media (max-width: 684px) {
+  body {
+    font-size: 1.53rem;
+  }
+}
+
+@media (max-width: 382px) {
+  body {
+    font-size: 1.35rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: 1;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  margin-bottom: 3rem;
+  font-family: "Questrial", sans-serif;
+  font-weight: 700;
+  color: #111;
+}
+
+h1 {
+  font-size: 3.8em;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.45em;
+}
+
+h3 {
+  font-size: 1.85em;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+small, sub, sup {
+  font-size: 75%;
+}
+
+p {
+  line-height: 1.8;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid saturate(lighten($color-brand, 25), 100);
+}
+
+a {
+  text-decoration: none;
+  color: $color-brand;
+  transition: 0.25s;
+  border-bottom: 1px solid transparentize($color-brand, 0.75);
+  &:hover {
+    transition-delay: -0.15s;
+    color: lighten($color-brand, 10);
+    border-bottom: 1px solid $color-brand;
+  }
+}
+
+ul {
+  padding-left: 1.4em;
+}
+
+li {
+  margin-bottom: 0.4em;
+}
+
+blockquote {
+  font-style: italic;
+  margin-left: 1.5em;
+  padding-left: 1em;
+  border-left: 3px solid $color-brand;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Pre and Code */
+pre {
+  background-color: #eaf0f3;
+  display: block;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+code {
+  font-size: 0.9em;
+  padding: 0 0.5em;
+  background-color: #eaedf0;
+  white-space: pre-wrap;
+  > code {
+    padding: 0;
+    background-color: transparent;
+    white-space: pre;
+  }
+}
+
+/* Tables */
+table {
+  text-align: justify;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 0.5em;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* Buttons, forms and input */
+input, textarea {
+  border: 1px solid #4a4a4a;
+  &:focus{
+    border: 1px solid $color-brand;
+  }
+}
+
+textarea {
+  width: 100%;
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  display: inline-block;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  font-family: "Questrial", sans-serif;
+  font-size: 0.8em;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: $color-brand;
+  border: none;
+  color: #f9f9f9;
+  cursor: pointer;
+  transition: 0.35s;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  &:hover {
+    transition-delay: -0.25s;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
+  }
+  &:active {
+    transition-delay: -0.25s;
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  display: inline-block;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  font-family: "Questrial", sans-serif;
+  font-size: 0.8em;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  background-color: $color-brand;
+  border: none;
+  color: #f9f9f9;
+  cursor: pointer;
+  transition: 0.35s;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  &:hover {
+    background-color: saturate(lighten($color-brand, 25), 100);
+    transition-delay: -0.25s;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
+  }
+  &:active {
+    transition-delay: -0.25s;
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.button[disabled], button[disabled], input[type="submit"][disabled], input[type="reset"][disabled], input[type="button"][disabled] {
+  cursor: default;
+  opacity: .5;
+}
+
+.button:focus, .button:hover, button:focus, button:hover, input[type="submit"]:focus, input[type="submit"]:hover, input[type="reset"]:focus, input[type="reset"]:hover, input[type="button"]:focus, input[type="button"]:hover {
+  background-color: $color-brand;
+  border-color: $color-brand;
+  color: #f9f9f9;
+  outline: 0;
+}
+
+textarea, select, input[type] {
+  color: #333;
+  padding: 15px;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  margin-bottom: 1rem;
+  background-color: #f1f1f1;
+  border: 1px solid #f1f1f1;
+  border-radius: 4px;
+  box-shadow: none;
+  transition: 0.4s;
+  &:hover {
+    background: $color-brand;
+    color: #f9f9f9;
+    transition-delay: -0.25s;
+  }
+  // &:active{
+  //   transition-delay: -0.25s;
+  //}
+}
+
+textarea:focus, select:focus, input[type]:focus {
+  border: 1px solid $color-brand;
+  outline: 0;
+}
+
+input[type="checkbox"]:focus {
+  outline: 1px dotted $color-brand;
+}
+
+label, legend, fieldset {
+  display: block;
+  margin-bottom: .5rem;
+  font-family: "Questrial", sans-serif;
+  font-weight: 700;
+}
+
+label {
+  font-size: 0.85em;
+  letter-spacing: 0.03em;
+}
