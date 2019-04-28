@@ -1,7 +1,9 @@
-
 //$color-brand: #00dc9f;
-//$color-brand: #ecbf2d;
+//$color-brand: #00973a;
 //$color-brand: #b4006b;
-//$color-brand: #6c00b4;
-//$color-brand: #d7376b;
-$color-brand: #6f00dc;
+$color-brand: #6c00b4;
+
+
+$base-font-size: 1.8; //in rem
+$base-line-height: 1.7;
+$rhythm: ($base-font-size * $base-line-height * 1rem);

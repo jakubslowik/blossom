@@ -1,3 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i');
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+
+*{
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -5,37 +13,33 @@ html {
 body {
   font-family: "Muli", sans-serif;
   font-weight: 400;
-  line-height: 1.618;
-  font-size: 1.7rem;
-  color: #2e3b41;
-  padding: 1rem;
-  background-color: #f5f8fa;
-}
-
-.container {
-  max-width: 1200px!important;
+  line-height: $base-line-height;
+  font-size: $base-font-size * 1rem;
+  color: #223137;
+  background-color: #f7fafc;
+  padding: $rhythm;
+  max-width: 750px;
   margin: 0 auto;
-}
-
-.text-container {
-  max-width: 70ch;
-  margin: 0 auto;
+  //needed for full-width header, not essential for the theme
+  //ref: https://css-tricks.com/full-width-containers-limited-width-parents/
+  overflow-x: hidden;
 }
 
 @media (max-width: 684px) {
   body {
     font-size: 1.53rem;
+    padding: $rhythm * 0.5;
   }
 }
 
 @media (max-width: 382px) {
   body {
     font-size: 1.35rem;
+    padding: $rhythm * 0.3;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
   line-height: 1;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -45,31 +49,55 @@ h1, h2, h3, h4, h5, h6 {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
-  margin-bottom: 3rem;
-  font-family: "Questrial", sans-serif;
+  font-family: "Catamaran", sans-serif;
   font-weight: 700;
   color: #111;
+  margin-top: 0;
+  margin-bottom: $rhythm;
+  + hr {
+    margin-top: -2.5rem;
+    margin-bottom: 3rem;
+  }
 }
 
 h1 {
   font-size: 3.8em;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
+  + h2 {
+    margin-top: -0.5 * $rhythm;
+    font-weight: 400;
+  }
 }
 
 h2 {
   font-size: 2.45em;
+  + h3 {
+    margin-top: -0.5 * $rhythm;
+    font-weight: 400;
+  }
 }
 
 h3 {
   font-size: 1.85em;
+  + h4 {
+    margin-top: -0.5 * $rhythm;
+    font-weight: 400;
+  }
 }
 
 h4 {
   font-size: 1.4em;
+  + h5 {
+    margin-top: -0.5 * $rhythm;
+    font-weight: 400;
+  }
 }
 
 h5 {
   font-size: 1.1em;
+  + h6 {
+    margin-top: -0.5 * $rhythm;
+  }
 }
 
 h6 {
@@ -78,17 +106,40 @@ h6 {
   letter-spacing: 0.02em;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: $rhythm;
+  + * {
+    margin-top: $rhythm * -0.25;
+  }
+  + h1, + h2, + h3, + h4, + h5, + h6 {
+    margin-top: 0;
+  }
+  + h4 { //TODO
+    margin-bottom: 0.35 * $rhythm;
+  }
+  &:last-of-type {
+    + * {
+      margin-top: 0;
+    }
+  }
+  textarea, select, input[type]{
+    margin-bottom: 0;
+  }
+}
+
 small, sub, sup {
   font-size: 75%;
 }
 
-p {
-  line-height: 1.8;
-}
-
 hr {
+  margin-top: 0;
+  margin-bottom: $rhythm;
   border: none;
   border-bottom: 1px solid saturate(lighten($color-brand, 25), 100);
+  + hr {
+    margin-top: -0.9 * $rhythm;
+  }
 }
 
 a {
@@ -103,38 +154,53 @@ a {
   }
 }
 
-ul {
-  padding-left: 1.4em;
+ul, ol, dl {
+  padding-left: 1em;
+  margin-bottom: $rhythm;
 }
 
 li {
-  margin-bottom: 0.4em;
+  margin-bottom: 0.5em;
+  * {
+    margin-bottom: 0.5em;
+  }
 }
 
 blockquote {
   font-style: italic;
-  margin-left: 1.5em;
+  margin-left: 1em;
   padding-left: 1em;
-  border-left: 3px solid $color-brand;
+  border-left: 4px solid $color-brand;
+  margin-bottom: $rhythm;
 }
 
 img {
   max-width: 100%;
+  margin-bottom: $rhythm;
 }
 
 /* Pre and Code */
 pre {
-  background-color: #eaf0f3;
+  background-color: #eaedf0;
   display: block;
   padding: 1em;
   overflow-x: auto;
+  border-radius: 4px;
+  margin-top: 0;
+  margin-bottom: $rhythm!important;
+  + pre {
+    margin-top: -0.5 * $rhythm;
+  }
 }
 
 code {
   font-size: 0.9em;
-  padding: 0 0.5em;
+  padding: 0.2em 0.35em;
   background-color: #eaedf0;
+  border-radius: 3px;
   white-space: pre-wrap;
+  margin-top: 0;
+  margin-bottom: $rhythm;
   > code {
     padding: 0;
     background-color: transparent;
@@ -144,62 +210,91 @@ code {
 
 /* Tables */
 table {
+  display: block;
   text-align: justify;
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: $rhythm;
 }
 
 td, th {
-  padding: 0.5em;
-  border-bottom: 1px solid #f1f1f1;
+  padding: 1em;
+  border-bottom: 1px solid #eaedf0;
+  line-height: 1.3;
+}
+
+th {
+  font-family: "Catamaran", sans-serif;
+  text-transform: uppercase;
+  color: black;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid #eaedf0;
+  :last-of-type {
+    border-bottom: none;
+    border-top: 2px solid #eaedf0;
+  }
 }
 
 /* Buttons, forms and input */
-input, textarea {
-  border: 1px solid #4a4a4a;
-  &:focus{
-    border: 1px solid $color-brand;
-  }
+
+label, legend, fieldset {
+  display: block;
+  margin-bottom: .25rem;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 700;
+}
+
+label {
+  font-size: 0.85em;
+  letter-spacing: 0.03em;
 }
 
 textarea {
   width: 100%;
+  resize: vertical;
 }
 
-.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
-  display: inline-block;
-  padding: 15px 25px;
-  text-transform: uppercase;
-  font-family: "Questrial", sans-serif;
-  font-size: 0.8em;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: $color-brand;
-  border: none;
-  color: #f9f9f9;
-  cursor: pointer;
-  transition: 0.35s;
-  border-radius: 9999px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+textarea, select, input {
+  font-family: "Muli",sans-serif!important;
+  color: #333;
+  padding: 15px;
+  background-color: #eaedf0;
+  border: 1px solid #eaedf0;
+  border-radius: 4px;
+  box-shadow: none;
+  transition: 0.4s;
+  margin-bottom: $rhythm;
+  &::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+    color: #777;
+  }
   &:hover {
+    border: 1px solid $color-brand;
     transition-delay: -0.25s;
-    transform: translateY(-1px);
-    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
   }
-  &:active {
-    transition-delay: -0.25s;
-    transform: translateY(0);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  &:focus {
+    transition-delay: -0.1s;
+    color: #f9f9f9;
+    background: $color-brand;
+    outline: none;
+    &::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+      color: #cdcdcd;
+    }
   }
+}
+
+input[type="checkbox"], input[type="radio"]{
+  width: 1.25em;
+  height: 1.25em;
+  margin-bottom: 1em;
 }
 
 .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
   display: inline-block;
-  padding: 15px 25px;
+  margin-bottom: $rhythm;
+  padding: 15px 30px;
   text-transform: uppercase;
-  font-family: "Questrial", sans-serif;
+  font-family: "Catamaran", sans-serif;
   font-size: 0.8em;
   font-weight: 700;
   text-align: center;
@@ -210,71 +305,27 @@ textarea {
   border: none;
   color: #f9f9f9;
   cursor: pointer;
-  transition: 0.35s;
-  border-radius: 9999px;
+  transition: 0.2s;
+  border-radius: 999px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
   &:hover {
-    background-color: saturate(lighten($color-brand, 25), 100);
-    transition-delay: -0.25s;
+    background-color: saturate(lighten($color-brand, 10), 100);
+    color: white;
     transform: translateY(-1px);
     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
   }
   &:active {
-    transition-delay: -0.25s;
+    background-color: $color-brand;
+    transition-delay: -0.15s;
     transform: translateY(0);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
   }
-}
-
-.button[disabled], button[disabled], input[type="submit"][disabled], input[type="reset"][disabled], input[type="button"][disabled] {
-  cursor: default;
-  opacity: .5;
-}
-
-.button:focus, .button:hover, button:focus, button:hover, input[type="submit"]:focus, input[type="submit"]:hover, input[type="reset"]:focus, input[type="reset"]:hover, input[type="button"]:focus, input[type="button"]:hover {
-  background-color: $color-brand;
-  border-color: $color-brand;
-  color: #f9f9f9;
-  outline: 0;
-}
-
-textarea, select, input[type] {
-  color: #333;
-  padding: 15px;
-  /* The 6px vertically centers text on FF, ignored by Webkit */
-  margin-bottom: 1rem;
-  background-color: #f1f1f1;
-  border: 1px solid #f1f1f1;
-  border-radius: 4px;
-  box-shadow: none;
-  transition: 0.4s;
-  &:hover {
-    background: $color-brand;
-    color: #f9f9f9;
-    transition-delay: -0.25s;
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: .5;
   }
-  // &:active{
-  //   transition-delay: -0.25s;
-  //}
+  &:focus {
+    outline: none;
+  }
 }
 
-textarea:focus, select:focus, input[type]:focus {
-  border: 1px solid $color-brand;
-  outline: 0;
-}
-
-input[type="checkbox"]:focus {
-  outline: 1px dotted $color-brand;
-}
-
-label, legend, fieldset {
-  display: block;
-  margin-bottom: .5rem;
-  font-family: "Questrial", sans-serif;
-  font-weight: 700;
-}
-
-label {
-  font-size: 0.85em;
-  letter-spacing: 0.03em;
-}

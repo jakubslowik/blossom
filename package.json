@@ -1,7 +1,7 @@
 {
   "name": "blossom",
   "version": "0.0.0",
-  "description": "A webpack boilerplate for static websites that has all the necessary modern tools and optimizations built-in.",
+  "description": "A modern looking minimal classless CSS theme.",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
@@ -44,6 +44,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "babel-plugin-prismjs": "^1.0.2",
     "bulma": "^0.7.2",
     "lazysizes": "^4.1.5"
   }

@@ -84,13 +84,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'tris-webpack-boilerplate',
+      title: 'Blossom - a modern minimal classless CSS theme',
       filename: 'index.html',
       template: './src/index.html',
       inject: 'head'
     }),
     new HtmlWebpackPlugin({
-      title: 'tris-404-page',
+      title: 'Blossom.css 404 page',
       filename: '404.html',
       template: './src/404.html',
       inject: 'head'

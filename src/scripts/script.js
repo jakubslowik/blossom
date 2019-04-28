@@ -1,4 +1,11 @@
-console.log('%c Hello from /scripts/script.js ', 'background: lemonchiffon; border: 1px solid #fff');
-console.log('%c Welcome to tris-webpack-boilerplate! ', 'background: lavenderblush; border: 1px solid #fff');
+console.log('hello from script.js');
 
-// add custom js below
+function toggleStylesheet() { //TODO
+  const styleEl = document.getElementById("style");
+  if (styleEl.href.match("path-to-blossom.css")) {
+    styleEl.href = "";
+  }
+  else {
+    styleEl.href = "path-to-blossom.css";
+  }
+}
