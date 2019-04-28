@@ -8,6 +8,6 @@ It is based on [Sakura.css](https://github.com/oxalorg/sakura), but tries to ach
 It provides a set of opinionated rules, that are meant to make a text content and typography look well. It is also fully responsive.
 
 
-**[EXAMPLE](https://blossom-css.netlify.com)**
+**[LIVE EXAMPLE](https://blossom-css.netlify.com)**
 
 Boilerplate used for development: https://github.com/tr1s/tris-webpack-boilerplate
