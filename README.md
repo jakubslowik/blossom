@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://blossom-css.netlify.com">
+    <img alt="banner" src="https://images2.imgbox.com/33/37/hCForNLZ_o.png"/>
+  </a>
+</p>
+
 # Blossom.css
 ### A modern classless CSS theme.
 
@@ -9,5 +15,7 @@ It provides a set of opinionated rules, that are meant to make a text content an
 
 
 **[LIVE EXAMPLE](https://blossom-css.netlify.com)**
+
+**[DOWNLOAD](https://raw.githubusercontent.com/jakubslowik/blossom-dist/master/blossom.css)**
 
 Boilerplate used for development: https://github.com/tr1s/tris-webpack-boilerplate
