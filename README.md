@@ -5,9 +5,9 @@
 </p>
 
 # Blossom.css
-### A modern classless CSS theme.
+### A modern CSS classless theme.
 
-Blossom.css is modern looking minimal classless CSS theme. You can use it as a starting point for your website or as a way to quickly make unstyled site - a good looking one. It can serve as a base for a simple site or blog.
+Blossom.css is modern looking minimal CSS theme. You can use it as a starting point for your website or as a way to quickly make unstyled site - a good looking one. It can serve as a base for a simple site or blog.
 
 It is based on [Sakura.css](https://github.com/oxalorg/sakura), but tries to achieve more modern style.
 
