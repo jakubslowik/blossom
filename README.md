@@ -4,6 +4,8 @@
   </a>
 </p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7ce2da5e-9cc9-4a0e-be50-96a3b2dafbe7/deploy-status)](https://app.netlify.com/sites/blossom-css/deploys)
+
 # Blossom.css
 ### A modern CSS classless theme.
 
